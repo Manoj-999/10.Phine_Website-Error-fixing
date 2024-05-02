@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Booking</title>
+<style>
+  body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+.pizza-choice {
+    margin-bottom: 20px;
+  }
+.topping-price {
+    margin-bottom: 10px;
+  }
+.order-summary {
+    margin-top: 20px;
+  }
+.order-summary h2 {
+    margin-bottom: 10px;
+  }
+.order-summary p {
+    margin-bottom: 20px;
+  }
+  button {
+    background-color: #ff6347; /* Tomato red for high contrast */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold; /* Make text bold for better readability */
+  }
+  button:hover {
+    background-color: #e06666; /* Slightly lighter shade for hover effect */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Pizza Booking</h1>
+  <div class="pizza-choice">
+    <h2>Choose Your Pizza</h2>
+    <p>Pepperoni Pizza: $15</p>
+    <p>Margherita Pizza: $12</p>
+    <p>BBQ Chicken Pizza: $18</p>
+  </div>
+  <div class="topping-price">
+    <h2>Toppings</h2>
+    <p>Extra Cheese: $2</p>
+    <p>Onions: $1</p>
+    <p>Mushrooms: $1</p>
+  </div>
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <p id="orderTotal">Total: $0</p>
+    <button onclick="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+<script>
+  function placeOrder() {
+    const pizzaPrice = 15; // Example price
+    const toppingsPrice = 4; // Example price
+    const taxRate = 0.1; // 10% tax
+    const deliveryFee = 5; // Example delivery fee
+
+    const total = (pizzaPrice + toppingsPrice) * (1 + taxRate) + deliveryFee;
+    document.getElementById('orderTotal').textContent = `Total: $${total.toFixed(2)}`;
+
+    alert("Order placed successfully Your order will be delivered in approximately 30 minutes.");
+  }
+</script>
+</body>
+</html>
